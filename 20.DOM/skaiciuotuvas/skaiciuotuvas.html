@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skaičiuotuvas</title>
+    <link rel="stylesheet" href="./skaiciuotuvas.css">
+    <script src="./skaiciuotuvas.js" defer></script>
+</head>
+<body>
+    <section id="calc">
+        <form>
+            <input type="number" name="number1" id="number1">
+            <select name="operator" id="operator">
+              <option value="add">Sudėti</option>
+              <option value="min">Atimti</option>
+              <option value="div">Dauginti</option>
+              <option value="mul">Dalinti</option>
+              <option value="degree">Kelti laipsniu</option>
+              <option value="root">Traukti šaknį</option>
+              <option value="remains">Rasti liekaną</option>
+            </select>
+            <input type="number" name="number2" id="number2">
+            <input type="submit" value="skaičiuoti">
+        </form>
+        <div id="results" onclick="calc()"></div>
+    </section>
+    
+</body>
+</html>
