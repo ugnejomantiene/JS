@@ -77,7 +77,6 @@ first2.innerHTML += `
   </div>
 `
 ;
-
 //3
 
 let first3 = document.querySelector("#first3");
@@ -93,4 +92,32 @@ first3.innerHTML += `
 };
 
 
+// FizzBuzz
 
+function FizzBuzz(nuo,iki) {
+  for(let i=nuo; i<= iki; i++){
+    if (i % 5 === 0 && i%3 == 0){
+      console.log('FizzBuzz');
+    } else if (i % 3 ==0) {
+      console.log("Fizz");
+    }  else if (i % 5 ==0) {
+      console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
+}
+
+
+// Prime
+
+function primeNumbers(upTo){
+  let primeNumbers = [];
+  if(upTo > 10){
+    for(let i = 2; i < 10, i++){
+      for(let j=i; j<10; j++){
+        
+      }
+    }
+  }
+}

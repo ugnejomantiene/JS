@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodai</title>
+    <style>
+        div p:nth-child(2) {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="math">
+            <div>
+                <p>Math.abs() – funkcija grąžina absoliučią skaičiaus reikšmę.</p>
+                <p>
+                    function difference(a, b) {
+                        return Math.abs(a - b);
+                      } <br>
+                      
+                      console.log(difference(3, 5));
+                      // expected output: 2 
+                      <br>
+                      
+                      console.log(difference(5, 3));
+                      // expected output: 2
+                </p>
+            </div> 
+            <div>
+                <p>Math.acos() - grąžina skaičiaus atvirkštinį kosinusą (radianais).</p>
+                <p></p>
+            </div>
+            <div>
+                <p>Math.acosh() -  Funkcija grąžina atvirkštinį skaičiaus hiperbolinį kosinusą.</p>
+                <p>
+                   </p>
+            </div>
+            <div>
+                <p>Math.asin() - grąžina skaičiaus atvirkštinį sinusą (radianais).</p>
+                <p>
+                </p>
+            </div>
+            <div>
+                <p>Math.asinh() - grąžina atvirkštinį skaičiaus hiperbolinį sinusą. </p>
+                <p>
+                </p>
+            </div>
+            <div>
+                <p>Math.atan() -  grąžina atvirkštinę skaičiaus liestinę (radianais).</p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p>Math.atan2() - grąžina kampą plokštumoje (radianais) tarp teigiamos x ašies ir spindulio nuo (0, 0) iki taško (x, y) Math.atan2(y, x) .</p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p>Math.atanh() - grąžina atvirkštinį skaičiaus hiperbolinį tangentą. </p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p>Math.cos() grąžina skaičiaus kosinusą radianais.</p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p>Math.cosh() - grąžina skaičiaus hiperbolinį kosinusą. </p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p>Math.exp() - grąžina e pakeltą iki skaičiaus laipsnio. </p>
+                <p>
+                    𝙼𝚊𝚝𝚑.𝚎𝚡𝚙 ( 𝚡 ) = e x
+                </p>
+            </div>
+            <hr>
+            <div>
+                <p>Math.cbrt() - grąžina skaičiaus kubinę šaknį. </p>
+                <p>
+                    console.log(Math.cbrt(64));<br>
+                    // expected output: 4
+                </p>
+            </div>
+            <div>
+                <p>Math.ceil() visada suapvalina ir grąžina mažesnį sveikąjį skaičių, didesnį už nurodytą skaičių arba jam lygų.</p>
+                <p>
+                    console.log(Math.ceil(.95)); <br>
+                    // expected output: 1 <br>
+
+                    console.log(Math.ceil(4)); <br>
+                    // expected output: 4
+                </p>
+            </div>
+            <div>
+                <p>Math.clz32() -  grąžina pirmųjų nulinių bitų skaičių 32 bitų dvejetainėje skaičiaus atvaizde.</p>
+                <p>
+                    // 00000000000000000000000000000001 <br>
+                    console.log(Math.clz32(1)); <br>
+                    // expected output: 31
+                </p>
+            </div>
+     
+            <div>
+                <p>Math.cos() - grąžina skaičiaus kosinusą radianais.</p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p>Math.cosh() - grąžina skaičiaus hiperbolinį kosinusą. tai yra</p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p>Math.exp() - grąžina e pakeltą iki skaičiaus laipsnio.</p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p>Math.expm1() -  grąžina e, padidintą iki skaičiaus laipsnio, atėmus iš 1.</p>
+                <p>
+                    𝙼𝚊𝚝𝚑.𝚎𝚡𝚙𝚖𝟷 ( 𝚡 ) = e x − 1 <br>
+                    console.log(Math.expm1(2)); <br>
+                    // expected output: 6.38905609893065
+                </p>
+            </div>
+            <div>
+                <p>Math.floor() - visada apvalina žemyn ir grąžina didžiausią sveikąjį skaičių, mažesnį už nurodytą skaičių arba jam lygų.</p>
+                <p>
+                    console.log(Math.floor(5.95)); <br>
+                    // expected output: 5
+                </p>
+            </div>
+            <div>
+                <p>Math.fround()  - grąžina artimiausią 32 bitų vieno tikslumo slankiąją skaičiaus reprezentaciją.</p>
+                <p>
+                    Math.fround(1.5); // 1.5 <br>
+                    Math.fround(1.5) === 1.5; // true
+                    
+                </p>
+            </div>
+            <div>
+                <p>Math.hypot() -  grąžina savo argumentų kvadratų sumos kvadratinę šaknį. Tai yra,</p>
+                <p>
+                    console.log(Math.hypot(3, 4)); <br>
+                    // expected output: 5
+                </p>
+            </div>
+            <div>
+                <p>Math.imul() - grąžina dviejų parametrų C tipo 32 bitų daugybos rezultatą.</p>
+                <p>
+                    Math.imul(2, 4); // 8 <br>
+                    Math.imul(-1, 8); // -8
+                </p>
+            </div>
+            <div>
+                <p>Math.log() - grąžina natūralų skaičiaus logaritmą (e bazę). </p>
+                <p>
+                    function getBaseLog(x, y) { <br>
+                        return Math.log(y) / Math.log(x); <br>
+                      }
+                      
+                      // 2 x 2 x 2 = 8 <br>
+                      console.log(getBaseLog(2, 8)); <br>
+                      // expected output: 3 <br>
+                      
+                      // 5 x 5 x 5 x 5 = 625 <br>
+                      console.log(getBaseLog(5, 625)); <br>
+                      // expected output: 4
+                </p>
+            </div>
+            <div>
+                <p></p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p></p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p></p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p></p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p></p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p></p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p></p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p></p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p></p>
+                <p>
+             
+                </p>
+            </div>
+            <div>
+                <p></p>
+                <p>
+             
+                </p>
+            </div>
+
+        </section>
+    </main>
+    
+</body>
+</html>

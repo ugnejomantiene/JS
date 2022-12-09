@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
+</head>
+<body>
+    <main>
+        <section id="card">
+            <form >
+                <div>
+                    <label for="photo">Nuotrauka</label>
+                    <input 
+                        type="file" 
+                        accept=".jpg, .jpeg, .png" 
+                        name="photo" 
+                        id="photo" 
+                        required>
+                </div>
+                <div>
+                    <label for="title">Pavadinimas</label>
+                    <input type="text" name="title" id="title" required>
+                </div>
+                <div class="description">
+                    <label for="description">Aprašymas</label>
+                    <textarea name="description" id="description" ></textarea>
+                </div>
+                <div>
+                    <label for="date">Data</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div>
+                    <label for="location">Lokacija</label>
+                    <input type="text" name="location" id="location">
+                </div>
+                <input type="submit" value="Generuoti">
+            </form>
+        </section>
+        <section id="generatedCards">
+            <div class="card">
+                <div>
+                    <img src="./images/318300446_1830961877268295_6005764579117561719_n.jpg" alt="">
+                    <p>2020-20-20</p>
+                    <p>Lietuva, Vilnius</p>
+                </div>
+                <div>
+                    <h1>Pavadinimas</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam debitis consequatur aspernatur at temporibus eaque. Debitis aliquam harum voluptate! Excepturi.
+                    </p>
+                </div>
+          
+
+         
+
+            </div>
+        </section>
+
+        <section id="task2">
+            <form>
+                <div>
+                  <label for="rows">Eiluciu skaicius</label>
+                  <input type="number" name="rows" id="rows" required>
+                </div>
+                <div>
+                  <label for="columns">Stulpeliu skaicius</label>
+                  <input type="number" name="columns" id="columns" required>
+                </div>
+                <input type="submit" value="Generuoti">
+              </form>
+        </section>
+     
+
+    </main>
+
+    
+</body>
+</html>
