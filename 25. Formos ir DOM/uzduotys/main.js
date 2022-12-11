@@ -1,27 +1,4 @@
-//2
-{
-const form = document.querySelector('form');
-  const table = document.createElement('table');
-  const tbody = document.createElement('tbody');
-  table.appendChild(tbody);
-  document.body.appendChild(table);
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const rows = form.elements.rows.value;
-    const columns = form.elements.columns.value;
-    tbody.innerHTML = '';
-    for (let i = 0; i < rows; i++) {
-      const tr = document.createElement('tr');
-      for (let j = 0; j < columns; j++) {
-        const td = document.createElement('td');
-        td.textContent = `${i + 1} - ${j + 1}`;
-        tr.appendChild(td);
-      }
-      tbody.appendChild(tr);
-    }
-  });
-}
  //3 data
  const data = {
   title: "Search movies",
@@ -166,6 +143,7 @@ const form = document.querySelector('form');
 //3
 let cardsPlace = document.querySelector(".cardsPlace");
 
+
 for(let i = 0; i < data.movies.length; i++){
   cardsPlace.innerHTML += `
     <div class="border">
@@ -185,11 +163,22 @@ for(let i = 0; i < data.movies.length; i++){
         </div>
       </div>
   </div>
-
-
-
-
-
   `;
 }
+
+let cards = document.querySelector(".cardsPlace");
+let isShow = true;
+
+function show_hide() {
+  if(isShow){
+    cards.style.display = "none";
+    isShow = false;
+  } else {
+    cards.style.display= "flex";
+    isShow = true;
+  }
+}
+
+
+
 
