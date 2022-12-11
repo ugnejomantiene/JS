@@ -165,10 +165,10 @@ for(let i = 0; i < data.movies.length; i++){
   </div>
   `;
 }
+// Button show/hide 
 
 let cards = document.querySelector(".cardsPlace");
 let isShow = true;
-
 function show_hide() {
   if(isShow){
     cards.style.display = "none";
@@ -178,6 +178,10 @@ function show_hide() {
     isShow = true;
   }
 }
+
+//Search
+
+let paieska = document.querySelector("#search");
 
 
 
