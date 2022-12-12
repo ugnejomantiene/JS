@@ -138,11 +138,11 @@ button {
   justify-content: center;
   padding: 50px 0;
  }
- input::placeholder {
+ select::placeholder {
   font-size: 15px;
   padding-left: 5px;
  }
- input {
+ select {
   font-size: 30px;
   width: 10%;
   padding-left: 30px;

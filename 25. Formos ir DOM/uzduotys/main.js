@@ -180,9 +180,3 @@ function show_hide() {
 }
 
 //Search
-
-let paieska = document.querySelector("#search");
-
-
-
-
