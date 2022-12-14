@@ -1,0 +1,40 @@
+
+section {
+    padding: 50px 20px;
+}
+table {
+
+border-spacing: 0;
+
+}
+
+
+tr > td {
+    border: 2px solid rgba(101, 65, 105, 0.605);
+}
+button {
+    border-radius: 10px;
+    background-color: rgb(68, 13, 69);
+    
+}
+input {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+input::placeholder {
+    color: black;
+}
+
+
+/* _______________________ */
+
+#carForm > input, label, button {
+    margin: 5px;
+}
+img {
+    height: 100px;
+    width: 90%;
+}
+.container { 
+    display: flex;
+}
