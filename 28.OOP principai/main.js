@@ -86,6 +86,79 @@ class Gyvunas{
     new Voras(8)
   ];
 
+// Susikurti (h1-h6) Antraštės Klasę su tekstu, atributais
+class Heading{
+  constructor(props){
+    this.props = props;
+    return this.render();
+  }
+
+  render = () =>{
+    this.htmlElement = document.createElement(`h${this.props.dydis}`);
+    this.textElement = document.createTextNode(this.props.tekstas);   
+    this.htmlElement.append(this.textElement);
+
+    if(this.props.atributai){
+      // jeigu atributai yra objektas
+      Object.keys(this.props.atributai).forEach(raktas => {
+        this.htmlElement.setAttribute(raktas, this.props.atributai[raktas]);
+      });
+
+      // jeigu atributai yra masyvai masyve
+      // this.props.atributai.forEach(atributas => {
+      //   this.htmlElement.setAttribute(atributas[0], atributas[1]);
+      // });
+    }
+
+    return this.htmlElement;
+  }
+}
+
+let antraste1 = new Heading({
+  dydis: '1',
+  tekstas: 'Kaimietiškai',
+  atributai: {
+    class: 'klasesVardas darVienaKlase',
+    id: 'kazkoksId',
+    style: 'color:red'
+  }
+  // atributai: [ 
+  //   ['class', 'klasesVardas darVienaKlase'],
+  //   ['id', 'kazkoksId'],
+  //   ['style', 'color:red']
+  // ]
+});
+document.querySelector("body").append(antraste1);
+document.querySelector("body").append(new Heading({
+  dydis:'5',
+  tekstas:'Labas rytas',
+  // atributai: [
+  //   ['style', 'font-size: 50px']
+  // ]
+  atributai: {
+    style: 'font-size:50px'
+  }
+}));
+document.querySelector("body").append(new Heading({
+  dydis:'6',
+  tekstas:'mažiukas'
+}));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // Užduotys
 
 // 1.1
@@ -98,7 +171,6 @@ class Zmogeliukas {
       this.firstName = this.getFormattedName(firstName);
       this.lastName = this.getFormattedName(lastName);
     }
-  
     getFormattedName(name) {
       if (name.toLowerCase().includes(" ")) {
         const names = name.split(" ");
@@ -108,7 +180,6 @@ class Zmogeliukas {
           .slice(1)
           .toLocaleLowerCase()}`;
       }
-  
       return name[0].toLocaleUpperCase() + name.slice(1).toLocaleLowerCase();
     }
   
@@ -159,7 +230,6 @@ class Zmogeliukas {
         alert("Price: " + this.price + " / " + "Mileage: " + this.mileage);
         console.log("Price: " + this.price);
         console.log("Mileage: " + this.mileage);
-      
       })
     }
   }
@@ -175,3 +245,49 @@ class Zmogeliukas {
     car.info();
   })
 
+
+//5) Sukurti Klasę, kuri kurs paragrafus.
+
+class Paragraph {
+  constructor(props) {
+    this.props = props;
+    return this.render();
+  }
+
+  render = () => {
+    this.htmlElement = document.createElement('p');
+    this.textElement = document.createTextNode(this.props.tekstas);
+    this.htmlElement.append(this.textElement);
+    if (this.props.atributai) {
+      Object.keys(this.props.atributai).forEach(raktas => {
+        this.htmlElement.setAttribute(raktas, this.props.atributai[raktas]);
+      });
+    }
+    return this.htmlElement;
+  }
+}
+
+let paragrafas1 = new Paragraph({
+  tekstas:
+    "Lorem ipsum dolor sit ame  consectetur adipisicing elit. Quisquam, quod.",
+  atributai: {
+    class: "klasesVardas darVienaKlase",
+    id: "kazkoksId",
+    style: "color:green"
+  }
+
+});
+document.querySelector("body").append(paragrafas1);
+document.querySelector("body").append(
+  new Paragraph({
+    tekstas: "Laba diena",
+    atributai: {
+      style: "font-size:20px"
+    }
+  })
+);
+document.querySelector("body").append(
+  new Paragraph({
+    tekstas: "Paragrafas"
+  })
+);

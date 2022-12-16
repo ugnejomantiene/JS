@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+
+
+/* Heading  */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left > h1 {
+    margin: 0;
+    font-family: 'Abril Fatface', cursive;
+}
+.left span {
+    color: blueviolet;
+}
+
+.right > i {
+    padding: 5px;
+    color: blueviolet;
+}
+
+/* ToDo Container  */
+
+#s_main {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    
+}
+.s_main {
+    width: 50%;
+    background-color:rgb(212, 184, 238);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    font-family:'Abril Fatface', cursive ;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;}
+
+/* ToDo Container inside */
+
+.btn , input{
+    height: 30px;
+    border: none;
+}
+
+
+/* Tasks place */
+#tasks_place {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.task {
+    background-color: aliceblue;
+}
+

@@ -1,0 +1,49 @@
+
+.lightThemeList {
+    /* background-color: rgb(71, 12, 78); */
+    border-radius: 10px;
+    width: 200px;
+    list-style-type:lower-greek;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+  
+  
+  
+.listItem {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid rgb(153, 49, 154);
+    border-radius: 20px;
+    background-color: #eee;
+    cursor: pointer;
+  }
+  
+.listItem:hover{
+    background-color: #ddd;
+    scale: 1.5;
+    transition: 1s;
+  }
+  
+  
+.select {
+    width: 20%;
+    padding: 20px;
+    border: 1px solid rgb(153, 49, 154);
+    border-radius: 20px;
+    background-color: #eee;
+    font-size: 30px;
+  }
+
+.table {
+    margin: 50px;
+}
+
