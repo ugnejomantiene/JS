@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    background-color: rgb(213, 180, 180);
+    box-sizing: border-box;
+}
 
 
-
-/* Heading  */
 
 #header {
     display: flex;
@@ -15,50 +23,114 @@
     font-family: 'Abril Fatface', cursive;
 }
 .left span {
-    color: blueviolet;
+    color: rgb(253, 255, 254);
 }
 
 .right > i {
     padding: 5px;
-    color: blueviolet;
+    color: rgb(9, 10, 9);
+}
+.right {
+    display: flex;
+    place-self: center center;
+
 }
 
-/* ToDo Container  */
 
-#s_main {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px;
-    
+h1 {
+	color: #541b1b;
+	font-size: 3rem;
+	font-weight: 50;
+	text-align: center;
+	margin: 1rem 0 3rem; 
+    font-family: 'Abril Fatface', cursive;
+
+
 }
-.s_main {
-    width: 50%;
-    background-color:rgb(212, 184, 238);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px;
-    font-family:'Abril Fatface', cursive ;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;}
 
-/* ToDo Container inside */
+.title{
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+	font-weight: 800;
+}
 
-.btn , input{
-    height: 30px;
+.inputDiv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.input{
+    padding: 0.5rem 1rem;
     border: none;
+    height: 50px;
+    border-radius: 25px;
+    width: 350px;
+    margin: 0.25rem;
+    font-size: 1.15rem;
+}
+
+.add{
+    border: none;
+    height: 50px;
+    border-radius: 25px;
+    width: 50px;
+    background-color: rgb(62, 7, 5);
+    color: white;
+    cursor: pointer;
+    margin: 0.25rem;
+}
+
+.add:hover{
+	opacity: 0.7;
+    transition: 1s;
+
 }
 
 
-/* Tasks place */
-#tasks_place {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
-.task {
-    background-color: aliceblue;
+
+.item{
+	padding: 0.5rem;
+	border-bottom: 4px solid #fff;
+	margin-bottom: 1.5rem;
 }
+
+.item_input{
+	background: none;
+	outline: none;
+	border: none;
+	color:#541b1b;
+	font-size: 1.4rem;
+	width: 245px;
+}
+.item_input:hover {
+    scale: 1.2;
+    transition: 1s;
+}
+
+
+.remove{
+	background: none;
+	outline: none;
+	border: none;
+	color: rgb(185, 145, 145);
+	font-size: 1rem;
+	font-family: 'Hind', sans-serif;
+	cursor: pointer;
+}
+.remove:hover {
+	color: rgb(89, 63, 63);
+    transition: 1s;
+
+}
+
+
 
