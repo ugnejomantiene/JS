@@ -6,7 +6,11 @@
 
 body{
     height: 100%;
-    background-color: rgb(213, 180, 180);
+    /* background-color: rgb(213, 180, 180); */
+    background-image: url(./images/photo-1497032628192-86f99bcd76bc.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
     box-sizing: border-box;
 }
 
@@ -16,6 +20,7 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    background-color: white;
 }
 
 .left > h1 {
@@ -44,6 +49,8 @@ h1 {
 	text-align: center;
 	margin: 1rem 0 3rem; 
     font-family: 'Abril Fatface', cursive;
+    margin-top: 100px;
+    text-shadow: 2px 2px 4px #000000;
 
 
 }
@@ -87,7 +94,13 @@ h1 {
 
 }
 
+#container {
+    background-color: rgba(255, 255, 255, 0.874);
+    width: 40%;
+    margin: 0 auto;
 
+    
+}
 
 .container{
 	display: flex;
@@ -131,6 +144,5 @@ h1 {
     transition: 1s;
 
 }
-
 
 
