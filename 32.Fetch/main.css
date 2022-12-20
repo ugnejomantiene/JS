@@ -1,0 +1,52 @@
+img{
+    height: auto;
+    width: 50%;
+  }
+
+.movie {
+    border: 2px solid grey;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+ #randomUser {
+    display: flex;
+    justify-content: center;
+
+ }
+.box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(27, 104, 110);
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid black;
+}
+.box:hover {
+    scale: 1.5;
+    transition: 2s;
+    border-radius: 0;
+}
+
+
+.box img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    border: 1px solid black;
+}
+.box img:hover {
+    border-radius: 0;
+    transition: 2s;
+    height: 200px;
+    width: 50%;
+}
+
+.info {
+    font-family:'Times New Roman', Times, serif;
+}

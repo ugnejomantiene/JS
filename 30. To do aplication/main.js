@@ -5,8 +5,7 @@ const container = document.querySelector('.container');
 let inputValue = document.querySelector('.input');
 const add = document.querySelector('.add');
 
-//Darom kažką, kas yra svarbu, bet dar nežinau - kodėl.
-//(pagal tutorial`ą)
+// Storage
 
 if(window.localStorage.getItem("todos") == undefined){
      let todos = [];
@@ -32,7 +31,7 @@ class Item{											// sukuriam klasę
     	input.value = name;							//išjungtas ir vartotojas negali jo pasirinkti ar suaktyvinti.
     	input.classList.add('item_input');			// inputui pridedame klasę 
 
-		//Užduoties pašalinimas
+		//Pašalinimo mygtuko sukūrimas
 
     	let remove = document.createElement('button'); // Priskiriame kintająmį mygtukui 
     	remove.classList.add('remove');				//  Mygtukui pridedame klasę
@@ -41,7 +40,7 @@ class Item{											// sukuriam klasę
 					/////////////////// Kas vyks paspaudus mygtuką/////////////////////////
     	container.appendChild(itemBox); 			// Į container įdedame itemBox
         itemBox.appendChild(input);					//Į itemBox įdedame input`ą
-		console.log(input.value);					// Išconsolinam reikšmę, kuri bus įvesta
+		// console.log(input.value);					// Išconsolinam reikšmę, kuri bus įvesta
         itemBox.appendChild(remove);				// Padarome, kad atsirastų REMOVE mygtukas, kai švedame kažką į inputą. 
     }
   
@@ -52,6 +51,7 @@ class Item{											// sukuriam klasę
         window.localStorage.setItem("todos", JSON.stringify(todos));
     }
 }
+
 add.addEventListener('click', check);    // tikriname, ar įvestas dalykas yra stringas
 window.addEventListener('keydown', (e) => {
 	if(e.value == String){
@@ -71,5 +71,5 @@ for (let i = 0 ; i < todos.length ; i++){
 }
 
 
-new Item("Išsimiegoti"); //Pastovųs taskai
-new Item("Išmokti JS");
+// new Item("Išsimiegoti"); //Pastovūs taskai
+// new Item("Išmokti JS");
