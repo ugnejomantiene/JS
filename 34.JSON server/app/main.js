@@ -1,33 +1,20 @@
 const books = document.querySelector('#books');
-
 const addBookForm = document.querySelector('#addBookForm');
-
 const title = document.querySelector('#title');
-
-const author = document.querySelector('#author');
-
-const year = document.querySelector('#year');
-
+const topic = document.querySelector('#topic');
+const duration = document.querySelector('#duration');
 const image = document.querySelector('#image');
-
 
 
 const url = 'http://localhost:3000/books';
 
 
-
 const getBooks = () => {
-
   fetch(url)
-
     .then((response) => response.json())
-
     .then((data) => {
-
       books.innerHTML = '';
-
       data.forEach((book) => {
-
         books.innerHTML += `
 
                 <div class="card">
@@ -38,112 +25,66 @@ const getBooks = () => {
 
                     <h5 class="card-title">${book.title}</h5>
 
-                    <p class="card-text">${book.author}</p>
+                    <p class="card-text">${book.topic}</p>
 
-                    <p class="card-text">${book.year}</p>
+                    <p class="card-text">${book.duration}</p>
 
                     <button class="btn btn-danger" onclick="deleteBook(${book.id})">Delete</button>
 
                     <button class="btn btn-warning" onclick="editBook(${book.id})">Edit</button>
-
                   </div>
-
                 </div>
-
               `;
-
       });
-
     });
-
 };
 
 
 
 const addBook = (e) => {
-
   e.preventDefault();
-
   const book = {
-
     title: title.value,
-
-    author: author.value,
-
-    year: year.value,
-
+    topic: topic.value,
+    duration: duration.value,
     image: image.value,
-
   };
 
   fetch(url, {
-
     method: 'POST',
-
     headers: {
-
       'Content-Type': 'application/json',
-
     },
-
     body: JSON.stringify(book),
-
   })
-
     .then((response) => response.json())
-
     .then((data) => {
-
       console.log(data);
-
       getBooks();
-
     });
-
 };
-
 
 
 const deleteBook = (id) => {
-
   fetch(`${url}/${id}`, {
-
     method: 'DELETE',
-
   })
-
     .then((response) => response.json())
-
     .then((data) => {
-
       console.log(data);
-
       getBooks();
-
     });
-
 };
 
-
-
 const editBook = (id) => {
-
   fetch(`${url}/${id}`)
-
     .then((response) => response.json())
-
     .then((data) => {
-
       title.value = data.title;
-
-      author.value = data.author;
-
-      year.value = data.year;
-
+      topic.value = data.topic;
+      duration.value = data.duration;
       image.value = data.image;
-
       addBookForm.innerHTML = `
-
               <div class="form
 
                 <label for="title">Title</label>
@@ -154,17 +95,17 @@ const editBook = (id) => {
 
               <div class="form
 
-                <label for="author">Author</label>
+                <label for="topic">topic</label>
 
-                <input type="text" name="author" id="author" class="form-control" value="${data.author}" required>
+                <input type="text" name="topic" id="topic" class="form-control" value="${data.topic}" required>
 
               </div>
 
               <div class="form
 
-                <label for="year">Year</label>
+                <label for="duration">duration</label>
 
-                <input type="text" name="year" id="year" class="form-control" value="${data.year}" required>
+                <input type="text" name="duration" id="duration" class="form-control" value="${data.duration}" required>
 
               </div>
 
@@ -177,59 +118,31 @@ const editBook = (id) => {
               </div>
 
               <button type="submit" class="btnAddBook" onclick="updateBook(${data.id})">Update book</button>
-
             `;
-
     });
-
 };
-
-
 
 const updateBook = (id) => {
-
   const book = {
-
     title: title.value,
-
-    author: author.value,
-
-    year: year.value,
-
+    topic: topic.value,
+    duration: duration.value,
     image: image.value,
-
   };
-
   fetch(`${url}/${id}`, {
-
     method: 'PUT',
-
     headers: {
-
       'Content-Type': 'application/json',
-
     },
-
     body: JSON.stringify(book),
-
   })
-
     .then((response) => response.json())
-
     .then((data) => {
-
       console.log(data);
-
       getBooks();
-
     });
-
 };
-
 
 
 addBookForm.addEventListener('submit', addBook);
-
-
-
 getBooks();
