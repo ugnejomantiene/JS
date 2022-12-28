@@ -1,37 +1,28 @@
-const books = document.querySelector('#books');
-const addBookForm = document.querySelector('#addBookForm');
+const course_C = document.querySelector('#course_C');
+const addCourseForm = document.querySelector('#addCourseForm');
 const title = document.querySelector('#title');
 const topic = document.querySelector('#topic');
 const duration = document.querySelector('#duration');
 const image = document.querySelector('#image');
 
+const url = 'http://localhost:3000/course_C';
 
-const url = 'http://localhost:3000/books';
 
-
-const getBooks = () => {
+const getCourse = () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      books.innerHTML = '';
-      data.forEach((book) => {
-        books.innerHTML += `
-
+      course_C.innerHTML = '';
+      data.forEach((course) => {
+        course_C.innerHTML += `
                 <div class="card">
-
-                  <img src="${book.image}" class="card-img-top" alt="...">
-
+                  <img src="${course.image}" class="card-img-top" alt="...">
                   <div class="card-body">
-
-                    <h5 class="card-title">${book.title}</h5>
-
-                    <p class="card-text">${book.topic}</p>
-
-                    <p class="card-text">${book.duration}</p>
-
-                    <button class="btn btn-danger" onclick="deleteBook(${book.id})">Delete</button>
-
-                    <button class="btn btn-warning" onclick="editBook(${book.id})">Edit</button>
+                    <h5 class="card-title">${course.title}</h5>
+                    <p class="card-text">${course.topic}</p>
+                    <p class="card-text">${course.duration}</p>
+                    <button class="btn btn-danger" onclick="deleteCourse(${course.id})">Delete</button>
+                    <button class="btn btn-warning" onclick="editCourse(${course.id})">Edit</button>
                   </div>
                 </div>
               `;
@@ -41,9 +32,9 @@ const getBooks = () => {
 
 
 
-const addBook = (e) => {
+const addCourse = (e) => {
   e.preventDefault();
-  const book = {
+  const course = {
     title: title.value,
     topic: topic.value,
     duration: duration.value,
@@ -55,94 +46,87 @@ const addBook = (e) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(book),
+    body: JSON.stringify(course),
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      getBooks();
+      console.log('Success:', data);
+      getCourse();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     });
 };
 
-
-const deleteBook = (id) => {
+const deleteCourse = (id) => {
   fetch(`${url}/${id}`, {
     method: 'DELETE',
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      getBooks();
+      console.log('Success:', data);
+      getCourse();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     });
 };
 
-const editBook = (id) => {
+//edit 
+const editCourse = (id) => {
   fetch(`${url}/${id}`)
     .then((response) => response.json())
     .then((data) => {
-      title.value = data.title;
-      topic.value = data.topic;
-      duration.value = data.duration;
-      image.value = data.image;
-      addBookForm.innerHTML = `
-              <div class="form
-
-                <label for="title">Title</label>
-
-                <input type="text" name="title" id="title" class="form-control" value="${data.title}" required>
-
-              </div>
-
-              <div class="form
-
-                <label for="topic">topic</label>
-
-                <input type="text" name="topic" id="topic" class="form-control" value="${data.topic}" required>
-
-              </div>
-
-              <div class="form
-
-                <label for="duration">duration</label>
-
-                <input type="text" name="duration" id="duration" class="form-control" value="${data.duration}" required>
-
-              </div>
-
-              <div class="form
-
-                <label for="image">Image</label>
-
-                <input type="text" name="image" id="image" class="form-control" value="${data.image}" required>
-
-              </div>
-
-              <button type="submit" class="btnAddBook" onclick="updateBook(${data.id})">Update book</button>
-            `;
+      course_C.innerHTML = `
+        <div class="course">
+          <img src="${data.image}" alt="${data.title}">
+          <h3>${data.title}</h3>
+          <p>${data.topic}</p>
+          <p>${data.duration}</p>
+          <form id="editCourseForm">
+            <input type="text" id="editTitle" value="${data.title}">
+            <input type="text" id="editTopic" value="${data.topic}">
+            <input type="text" id="editDuration" value="${data.duration}">
+            <input type="text" id="editImage" value="${data.image}">
+            <button class="btnUpdate" data-id="${data.id}">Update</button>
+          </form>
+        </div>
+      `;
     });
 };
 
-const updateBook = (id) => {
-  const book = {
-    title: title.value,
-    topic: topic.value,
-    duration: duration.value,
-    image: image.value,
+const updateCourse = (e) => {
+  e.preventDefault();
+  const id = e.target.dataset.id;
+  const course = {
+    title: document.querySelector('#editTitle').value,
+    topic: document.querySelector('#editTopic').value,
+    duration: document.querySelector('#editDuration').value,
+    image: document.querySelector('#editImage').value,
   };
+
   fetch(`${url}/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(book),
+    body: JSON.stringify(course),
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      getBooks();
+      console.log('Success:', data);
+      getCourse();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     });
 };
 
+addCourseForm.addEventListener('submit', addCourse);
+course_C.addEventListener('click', (e) => {
+  if (e.target.classList.contains('btnUpdate')) {
+    updateCourse(e);
+  }
+});
 
-addBookForm.addEventListener('submit', addBook);
-getBooks();
+getCourse();

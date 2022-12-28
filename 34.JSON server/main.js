@@ -32,7 +32,7 @@ let get = () => {
             'Content-type': 'application/json'
         },
         body: JSON.stringify({
-            title: "Pakeiciu data.json ę elementa",
+            title: "Pakeiciu data.json į elementa",
             author: "id isliks toks pats"
         })
     })

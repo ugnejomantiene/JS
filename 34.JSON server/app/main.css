@@ -32,7 +32,7 @@ button {
 
 
 
-.btnAddBook {
+.btnAddCourse {
  
   padding: 20px;
   font-size: 2rem;
@@ -61,7 +61,7 @@ button {
 
 
 
-.btnAddBook:hover {
+.btnAddCourse:hover {
   background-color: #8da1b7;
   border-color: #737b84;
   border: 2px solid #74728f;
@@ -83,11 +83,11 @@ button {
 
 
 
-.btnAddBook:focus {
+.btnAddCourse:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
-#addBookForm {
+#addCourseForm {
   border: 1px solid black;
   width: 20%;
   padding: 50px;
@@ -123,7 +123,7 @@ label{
 
 
 
-#books {
+#course_C {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -132,21 +132,39 @@ label{
 
 
 
-#books .card {
+#course_C .card {
   margin-bottom: 20px;
   border: 2px solid #231a39;
   background-color: rgba(253, 253, 255, 0.832);
 
+
+}
+
+#course_C .card:hover {
+  scale: 1.1;
+  transition: 2s;
 }
 
 
-
-
-#books .card img {
+#course_C .card img {
   width: 300px;
   height: 400px
 }
 
 .card-body {
 text-align: center;
+}
+
+
+.course {
+  background-color: rgba(255, 255, 255, 0.323);
+}
+.course img {
+  width: 100%;
+}
+.course > h3, p {
+  text-align: center;
+}
+#editCourseForm {
+  padding: 20px;
 }
